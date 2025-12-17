@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
 name: CI
 
 on:
@@ -72,4 +71,3 @@ jobs:
           VER=`grep version: ./charts/eks-gitops-argocd/Chart.yaml | cut -d ':' -f2 | tr -d '\n\t\r '`
           helm package charts/eks-gitops-argocd
           helm push eks-gitops-argocd-${VER}.tgz oci://$ECR_REGISTRY/
-
